@@ -1,5 +1,5 @@
 const textDisplay = document.getElementById('text');
-const phrases = ['Hello.', 'I am Herman.', 'Bye.'];
+const phrases = ['Hello.','I am Herman.','Bye.'];
 let i = 0;
 let j = 0;
 let currentPhrase = [];
@@ -33,9 +33,13 @@ function loop() {
             currentPhrase = [];
             isDeleting = false;
             i += 1;
+            if (i == phrases.length) {
+                i = 0;
+            }
         }
-    }
 
+
+    } 
     setTimeout(loop, 300)
 }
 
