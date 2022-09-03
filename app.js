@@ -11,25 +11,23 @@ function loop() {
     textDisplay.innerHTML = currentPhrase.join('');
 
     if (i < phrases.length) {
-        // console.log(phrases[i])
-
+        
+        // ('add a letter', j)
         if (!isDeleting && j <= phrases[i].length) {
-            // console.log(phrases[i][j])
             currentPhrase.push(phrases[i] [j])
             j += 1;
-            // console.log('add a letter', j)
             textDisplay.innerHTML = currentPhrase.join('');
         }
 
+
+        // ('remove a letter', j)
         if (isDeleting && j <= phrases[i].length) {
             currentPhrase.pop(phrases[i][j])
             j -= 1;
-            // console.log('remove a letter', j)
             textDisplay.innerHTML = currentPhrase.join('');
         }
 
         if (j == phrases[i].length) {
-            // i  += 1;
             isEnd = true;
             isDeleting = true;   
         }
