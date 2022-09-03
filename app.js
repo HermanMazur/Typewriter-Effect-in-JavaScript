@@ -1,11 +1,13 @@
 const textDisplay = document.getElementById('text');
-const phrases = ['Hello.','I am Herman.','Bye.'];
+const phrases = ['Hello, my name is Herman.', 'I love to code.', 'I love to teach.'];
 let i = 0;
 let j = 0;
 let currentPhrase = [];
 let isDeleting = false;
+let isEnd = false;
 
 function loop() {
+    isEnd = false;
     textDisplay.innerHTML = currentPhrase.join('');
 
     if (i < phrases.length) {
@@ -15,17 +17,20 @@ function loop() {
             // console.log(phrases[i][j])
             currentPhrase.push(phrases[i] [j])
             j += 1;
-            console.log('add a letter', j)
+            // console.log('add a letter', j)
+            textDisplay.innerHTML = currentPhrase.join('');
         }
 
         if (isDeleting && j <= phrases[i].length) {
             currentPhrase.pop(phrases[i][j])
             j -= 1;
-            console.log('remove a letter', j)
+            // console.log('remove a letter', j)
+            textDisplay.innerHTML = currentPhrase.join('');
         }
 
         if (j == phrases[i].length) {
             // i  += 1;
+            isEnd = true;
             isDeleting = true;   
         }
 
@@ -40,7 +45,10 @@ function loop() {
 
 
     } 
-    setTimeout(loop, 300)
+    const spedUp = Math.random() * (80 - 50) + 50;
+    const normalSpeed = Math.random() * (300 - 200) + 200;
+    const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
+    setTimeout(loop, time);
 }
 
 loop();
