@@ -1,26 +1,27 @@
-const textDisplay = document.getElementById('text');
-const phrases = ['Hello, my name is Herman.', 'I love to code.', 'I love to teach.'];
-let i = 0;
-let j = 0;
-let currentPhrase = [];
-let isDeleting = false;
-let isEnd = false;
+// const textDisplay = document.getElementById('text');
+// conts phrases = ['Hello, my name is Herman.', 'I love to code.', 'I love to teach.'];
 
-function loop() {
+const animationTyped = function ({ el, arr }) {
+const textDisplay = document.getElementById((el));
+    const phrases = arr;
+    let i = 0;
+    let j = 0;
+    let currentPhrase = [];
+    let isDeleting = false;
+    let isEnd = false;
+
+    function loop() {
     isEnd = false;
     textDisplay.innerHTML = currentPhrase.join('');
 
     if (i < phrases.length) {
         
-        // ('add a letter', j)
         if (!isDeleting && j <= phrases[i].length) {
             currentPhrase.push(phrases[i] [j])
             j += 1;
             textDisplay.innerHTML = currentPhrase.join('');
         }
 
-
-        // ('remove a letter', j)
         if (isDeleting && j <= phrases[i].length) {
             currentPhrase.pop(phrases[i][j])
             j -= 1;
@@ -50,4 +51,25 @@ function loop() {
 }
 
 loop();
+};
 
+
+animationTyped({
+    el: 'text',
+    arr: [
+        'Hello, my name is Herman.',
+        'I love to code.',
+        'I love to teach.'
+    ],
+    intervalTime: 2000
+});
+        
+animationTyped({
+    el: 'text-1',
+    arr: [
+        'Bye, i was a human.',
+        'I did not love to code.',
+        'I loved to cry.'
+    ],
+    intervalTime: 3000
+});
