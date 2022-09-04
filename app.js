@@ -53,7 +53,6 @@ const textDisplay = document.getElementById((el));
 loop();
 };
 
-
 animationTyped({
     el: 'text',
     arr: [
@@ -68,8 +67,8 @@ animationTyped({
     el: 'text-1',
     arr: [
         'Bye, i was a human.',
-        'I did not love to code.',
-        'I loved to cry.'
+        'Why, JS ? Why...?.',
+        'Suicide club.'
     ],
     intervalTime: 3000
 });
