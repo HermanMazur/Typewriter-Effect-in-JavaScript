@@ -72,3 +72,11 @@ animationTyped({
     ],
     intervalTime: 3000
 });
+
+animationTyped({
+    el: 'text-2',
+    arr: [
+        'FUCK!!!'
+    ],
+    intervalTime: 10000
+});
