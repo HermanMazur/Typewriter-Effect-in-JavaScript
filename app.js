@@ -1,19 +1,18 @@
 // const textDisplay = document.getElementById('text');
 // conts phrases = ['Hello, my name is Herman.', 'I love to code.', 'I love to teach.'];
 
-<<<<<<< HEAD
+
 const animationTyped = function ({ el, arr }) {
-    const textDisplay = document.getElementById(j
-        (el));
+    const textDisplay = document.getElementById(el);
     const phrases = arr;
     let i = 0;
     let j = 0;
     let currentPhrase = [];
     let isDeleting = false;
     let isEnd = false;
-=======
-const animationTyped = function ({ el, arr, intervalTime }) {
-    const textDisplay = document.getElementById((el));
+
+    const animationTyped = function ({ el, arr, intervalTime }) {
+        const textDisplay = document.getElementById((el));
         const phrases = arr;
         let i = 0;
         let j = 0;
@@ -21,7 +20,7 @@ const animationTyped = function ({ el, arr, intervalTime }) {
         let isDeleting = false;
         let isEnd = false;
         let times = intervalTime;
->>>>>>> b0132ff9cc54c191c80ee4a188f4f5edd3830d18
+
 
         function loop() {
             isEnd = false;
@@ -30,7 +29,7 @@ const animationTyped = function ({ el, arr, intervalTime }) {
             if (i < phrases.length) {
 
                 if (!isDeleting && j <= phrases[i].length) {
-                    currentPhrase.push(phrases[i] [j])
+                    currentPhrase.push(phrases[i][j])
                     j += 1;
                     textDisplay.innerHTML = currentPhrase.join('');
                 }
@@ -43,7 +42,7 @@ const animationTyped = function ({ el, arr, intervalTime }) {
 
                 if (j == phrases[i].length) {
                     isEnd = true;
-                    isDeleting = true;   
+                    isDeleting = true;
                 }
 
                 if (isDeleting && j === 0) {
@@ -54,7 +53,7 @@ const animationTyped = function ({ el, arr, intervalTime }) {
                         i = 0;
                     }
                 }
-            } 
+            }
 
             const spedUp = Math.random() * (80 - 50) + 50;
             const normalSpeed = Math.random() * (300 - 200) + 200;
@@ -62,8 +61,9 @@ const animationTyped = function ({ el, arr, intervalTime }) {
             setTimeout(loop, time);
         }
 
-    loop();
-};
+        loop();
+    };
+}
 
 animationTyped({
     el: 'text',
