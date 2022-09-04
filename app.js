@@ -2,7 +2,8 @@
 // conts phrases = ['Hello, my name is Herman.', 'I love to code.', 'I love to teach.'];
 
 const animationTyped = function ({ el, arr }) {
-const textDisplay = document.getElementById((el));
+    const textDisplay = document.getElementById(j
+        (el));
     const phrases = arr;
     let i = 0;
     let j = 0;
